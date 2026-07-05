@@ -277,31 +277,15 @@ export async function handleWebhook(request, ownerUid, botToken, secretToken, ch
   try {
     if ("/start" === message.text) {
       // Introduction words for various scenarios
-      let introduction = "*Welcome\\!*" +
-          "\n>I'm a PM bot\\." +
-          "\n>I'll forward your messages to my owner, and vice versa\\." +
-          "\n*There are some details below:*" +
-          "\n**>EMOJI REACTION:" +
-          "\n>  The emoji reaction 🕊 as seen below this message, indicates a successful forwarding\\." +
-          "\n>  If you don't see that, the message hasn't been forwarded\\." +
-          "\n>  You can tap other emoji reaction for both your and my messages\\(except this one\\), and I'll forward it as well\\." +
-          "\n>  But as a bot, limited by TG, I can only send ONE FREE emoji reaction for each message\\." +
-          "\n>  So that if you're a tg\\-premium\\-user and tap many emoji reactions for one message\\. I'll only forward the last one if it's a free emoji\\.||" +
+      let introduction = "👋 *欢迎使用 LuDan AI 双向沟通机器人* 🤖" +
+          "\n**>*💬 使用说明*" +
+          "\n>请直接发送消息，客服将在工作时间为您回复。" +
+          "\n>🙏 感谢您的耐心等待，我们会尽快处理您的问题。||" +
           "\n" +
-          "\n**>EDIT MESSAGE:" +
-          "\n>  You can edit your message as usual, but ONLY TEXT message for now\\. " +
-          "If forward success, the emoji reaction 🦄 will swiftly appear and revert to 🕊 after about 1s\\." +
-          "\n>  If you don't see that, the EDITING hasn't been forwarded\\." +
-          "\n>  Perhaps you miss seeing that, you can try edit AGAIN with DIFFERENT CONTENT\\.||" +
-          "\n" +
-          "\n**>DELETE MESSAGE:" +
-          "\n>  You can delete your messages I forwarded by REPLYING the origin message and TYPING `#del` to me\\." +
-          " No additional process is needed\\." +
-          "\n>  But I can only delete my own messages, not yours\\. So, you need to delete the messages for yourself," +
-          " include \\[origin message\\] \\[command message\\] and \\[notify message\\]\\.||" +
-          "\n" +
-          "\n*If you want to see this message again,*" +
-          "\n*Send `/start` to me\\.*";
+          "\n👋 *Welcome to LuDan AI Two\\-Way Bot* 🤖" +
+          "\n**>*💬 How to use*" +
+          "\n>Just send your message and our support team will reply during working hours\\." +
+          "\n>🙏 Thanks for your patience, we'll get back to you soon\\.||";
       if (fromUser.id.toString() === ownerUid) {
         // for owner only
         introduction += "\n" +
